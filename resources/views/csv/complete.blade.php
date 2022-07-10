@@ -33,22 +33,7 @@
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="p-12">
-                        <form action="{{ route('csv.import') }}" method="post">
-                            @csrf
-                            <input type="submit" value="普通にインポート" />
-                        </form>
-                    </div>
-
-                    <div class="p-12 mt-8">
-                        <button>普通にインポート</button>
-                    </div>
-
-                    <div class="p-12 mt-8">
-                        <button>普通にインポート</button>
-                    </div>
-
-                    <div class="p-12 mt-8">
-                        <button>普通にインポート</button>
+                        <p>取り込みが完了しました</p>
                     </div>
                 </div>
             </div>
