@@ -7,5 +7,15 @@ services:
             - .:/work
         ports:
             - '8000:8000'
+    db:
+        image: mysql:5.7
+        ports:
+            - '3306:3306'
+        environment:
+            MYSQL_DATABASE: laravel_local
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - db-store:/var/lib/mysql
 volumes:
     temp-vendor: {}
+    db-store: {}
