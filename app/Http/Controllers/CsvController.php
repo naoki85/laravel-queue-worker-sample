@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ImportCsvJob;
 use App\Models\Item;
 use Illuminate\Support\Facades\Log;
 
@@ -23,6 +24,12 @@ class CsvController extends Controller
             Log::debug('imported: ' . $line);
         }
         fclose($file);
+        return redirect()->route('csv.complete');
+    }
+
+    public function enqueueToDatabase()
+    {
+        ImportCsvJob::dispatch()->delay(now()->addMinutes());
         return redirect()->route('csv.complete');
     }
 

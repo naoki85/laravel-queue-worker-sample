@@ -40,7 +40,10 @@
                     </div>
 
                     <div class="p-12 mt-8">
-                        <button>普通にインポート</button>
+                        <form action="{{ route('csv.enqueue_to_database') }}" method="post">
+                            @csrf
+                            <input type="submit" value="データベースキュー" />
+                        </form>
                     </div>
 
                     <div class="p-12 mt-8">
